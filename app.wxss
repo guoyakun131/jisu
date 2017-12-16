@@ -1,0 +1,253 @@
+/**app.wxss**/
+@import "/pages/wxParse/wxParse.wxss";
+
+page{
+  height: 100%;
+  background: #eee;
+  color: #333;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+}
+.box{
+  border-top: 1px solid #f0f0f0;
+}
+view{
+  box-sizing: border-box;
+  line-height: 1.6;
+  font-size: 13px;
+}
+image{
+  vertical-align: middle;
+}
+button{
+  box-sizing: border-box;
+}
+.clear:after{
+  content: "";
+  clear: both;
+  height: 0;
+  display: block;
+}
+.link-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 22rpx;
+  background: #fff;
+  height: 80rpx;
+}
+.link-item:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.link-item .title{
+  width: 170rpx;
+}
+.link-item .right{
+  flex: 1;
+  padding-right:30rpx;
+  text-align: right;
+}
+.link{
+  position: relative;
+}
+.link:after{
+  content:" ";
+  display:inline-block;
+  height:6px;
+  width:6px;
+  border-width:2px 2px 0 0;
+  border-color:#c8c8cd;
+  border-style:solid;
+  -webkit-transform:matrix(.71,.71,-.71,.71,0,0);
+  transform:matrix(.71,.71,-.71,.71,0,0);
+  top:-2px;
+  position:absolute;
+  top:50%;
+  margin-top:-4px;
+  right:22rpx;
+}
+/*加减*/
+.handle-num{
+  display: flex;
+}
+.handle-num .btn{
+  width: 70rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 11px;
+}
+.handle-num .input{
+  width: 190rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+/*底部操作*/
+.handle{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  height: 100rpx;
+}
+
+
+/*tab*/
+.tab-nav{
+  display: flex;
+  background: #fff;
+}
+.tab-nav .item{
+  border-bottom: 1px solid transparent;
+  line-height: 72rpx;
+}
+.tab-nav .item.active{
+  border-bottom: 1px solid #363636;
+}
+
+/*loadmore*/
+.weui-loadmore{
+  width:65%;
+  margin:1.5em auto;
+  line-height:1.6em;
+  font-size:14px;
+  text-align:center;
+}
+.weui-loading {
+  margin: 0 5px;
+  width:20px;
+  height:20px;
+  display: inline-block;
+  vertical-align: middle;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+  background-size: 100%;
+  
+}
+
+@keyframes weuiLoading {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+.weui-loadmore__tips{
+  display:inline-block;
+  vertical-align:middle;
+}
+.weui-loadmore_line{
+  border-top:1px solid #e5e5e5;
+  margin-top:2.4em;
+}
+.weui-loadmore__tips_in-line{
+  position:relative;
+  top:-.9em;
+  padding:0 .55em;
+  background-color:#f0f0f0;
+  color:#999;
+}
+
+
+/*searchbar*/
+/*@weuiSearchBarHeight: 28px;*/
+.weui-search-bar {
+    position: relative;
+    padding: 8px 10px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: #EFEFF4;
+    border-top: 1rpx solid #D7D6DC;
+    border-bottom: 1rpx solid #D7D6DC;
+}
+.weui-icon-search {
+    margin-right: 8px;
+    font-size:inherit;
+}
+.weui-icon-search_in-box {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+.weui-search-bar__text{
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.weui-search-bar__form {
+    position: relative;
+    flex: auto;
+    border-radius: 5px;
+    background: #FFFFFF;
+    border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+}
+.weui-search-bar__input {
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+}
+.weui-icon-clear {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 7px 8px;
+    font-size: 0;
+}
+.weui-search-bar__label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    border-radius: 3px;
+    text-align: center;
+    color: #9B9B9B;
+    background: #FFFFFF;
+    line-height: 28px;
+}
+.weui-search-bar__cancel-btn {
+    margin-left: 10px;
+    line-height: 28px;
+    color: #09BB07;
+    white-space: nowrap;
+}
+button:after{
+  border: none;
+}
+.submit{
+  margin-top: 125rpx;
+  padding: 0 90rpx;
+}
+.submit button{
+  height: 95rpx;
+  line-height: 95rpx;
+  background: #ff4444;
+  font-size: 18px;
+  border-radius: 0;
+  color: #fff;
+}

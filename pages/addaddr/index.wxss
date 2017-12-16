@@ -1,0 +1,44 @@
+/* pages/addaddr/index.wxss */
+.link-item{
+  height: 95rpx;
+  padding: 0;
+}
+.title{
+  font-size: 14px;
+}
+.list{
+  padding-left: 30rpx;
+  background: #fff;
+}
+.link-item .right{
+  text-align: left;
+}
+.link-item:last-of-type{
+  border-bottom: none;
+}
+.form-btn{
+  padding: 10rpx 30rpx;
+}
+.form-btn button{
+  margin: 20rpx 0;
+  line-height: 90rpx;
+  border-radius: 0;
+  font-size: 16px;
+}
+.cancel{
+  background: #fff;
+}
+.placehold{
+  color: #999;
+  font-size: 14px;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+}
+.city-picker .right{
+  display: flex;
+}
+.city-picker picker{
+  flex: 1;
+}
+.default{
+  color: #999;
+}

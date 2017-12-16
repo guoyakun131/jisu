@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/index",
+    "pages/my/index",
+    "pages/cart/index",
+    "pages/logs/logs",
+    "pages/sureorder/index",
+    "pages/order/index",
+    "pages/addr/index",
+    "pages/addaddr/index",
+    "pages/assess/index",
+    "pages/logistics/index",
+    "pages/allassess/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff4444",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "/common/img/icon-1.png",
+      "selectedIconPath": "/common/img/icon-1-active.png",
+      "text": "商城"
+    },
+    {
+      "pagePath": "pages/cart/index",
+      "iconPath": "/common/img/icon-2.png",
+      "selectedIconPath": "/common/img/icon-2-active.png",
+      "text": "购物车"
+    },
+    {
+      "pagePath": "pages/my/index",
+      "iconPath": "/common/img/icon-3.png",
+      "selectedIconPath": "/common/img/icon-3-active.png",
+      "text": "我的"
+    }]
+  }
+}

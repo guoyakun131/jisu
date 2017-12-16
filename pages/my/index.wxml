@@ -1,0 +1,35 @@
+<!--pages/my/index.wxml-->
+<view class="my">
+    <view class="top">
+        <image src="{{userInfo.avatarUrl}}"></image>
+        <view class="name">{{userInfo.nickName}}</view>
+    </view>
+    <view class="my-order">
+        <navigator url="../order/index">
+            <view class="link-item link all-order">
+                <view class="title">我的订单</view>
+                <view class="right">查看全部订单</view>
+            </view>
+        </navigator>
+        <view class="order-list">
+            <block wx:for="{{orderList}}" wx:key="index">
+                <view class="order-item">
+                    <navigator url="../order/index?index={{item.index}}">
+                        <view class="icon"></view>
+                        <text>{{item.name}}</text>
+                    </navigator>
+                </view>
+            </block>
+        </view>
+    </view>
+    <navigator url="../cart/index" open-type="switchTab">
+        <view class="link-item my-cart">
+            <view class="title">购物车</view>
+            <view class="right"><view>{{cartCount}}</view></view>
+        </view>
+    </navigator>
+    <view class="link-item link call" bindtap="call">
+        <view class="title">联系客服</view>
+        <view class="right"></view>
+    </view>
+</view>

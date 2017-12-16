@@ -1,0 +1,27 @@
+<!--pages/assess/index.wxml-->
+<view class="box">
+    <view class="top">
+        <image src="{{base_url + shopImg}}" mode="aspectFill"></image> 
+        <view class="title">商品评价</view>
+        <view class="star-box">
+            <block wx:for="{{5}}" wx:key="index">
+                <view class="star {{starIndex > index?'active':''}}" data-index="{{index}}" bindtap="setStarIndex"></view>
+            </block>
+        </view>
+    </view>
+    <view class="middle">
+        <textarea  placeholder="分享你的购买心得" value="{{content}}" bindinput="input"/>
+    </view>
+    <!-- <view class="bottom">
+        <block>
+            <view class="img-box">
+                 <image src="/../common/img/img-1.png"></image>
+                 <icon type="clear" size="16" color="#ff4444"/> 
+            </view>
+        </block>
+        <view class="file-up-img"></view>
+    </view> -->
+    <view class="submit">
+        <button bindtap="submit">提交评价</button>
+    </view>
+</view>

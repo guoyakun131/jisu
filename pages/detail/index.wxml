@@ -1,0 +1,87 @@
+<!--pages/detail/index.wxml-->
+<import src="../wxParse/wxParse.wxml"/>
+ <view class="box">
+    <swiper indicator-dots="{{true}}"
+      indicator-color="#fff"
+      indicator-active-color="#ff4444"
+      autoplay="{{true}}">
+       <block wx:for="{{goodsInfo.imgs}}" wx:key="index"> 
+        <swiper-item>
+          <image src="{{base_url + item.img}}" class="slide-image" mode="aspectFill"/>
+        </swiper-item>
+       </block> 
+    </swiper>
+    <view class="top">
+        <view class="name">{{goodsInfo.name}}</view>
+        <view class="price">￥{{goodsInfo.price}}</view>
+        <view class="feight">
+            <text>运费：￥{{goodsInfo.express}}</text>
+            <text class="only">剩余:{{goodsInfo.nums}}</text>
+        </view>
+    </view>
+    <view class="middle">
+        <view class="link-item link" bindtap="showAction">
+            <view class="title">请选择规格与数量</view>
+            <view class="right"></view>
+        </view>
+        <view class="flag">
+            <block>
+                <view class="item">
+                    <view class="icon"></view>
+                    <text></text>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="title">商品评价（{{assess.length}}）</view>
+        <view class="info"  wx:if="{{assess.length != 0}}">
+            <view class="name"><image src="{{assess[0].avatar}}" mode="aspectFill"></image> <text>{{assess[0].nick_name}}</text></view>
+            <view class="text">{{assess[0].content}}</view>
+            <view class="size">{{assess[0].spec}}</view>
+        </view>
+        <view class="info" wx:else="{{assess.length != 0}}">暂无评价,欢迎您购买之后留下宝贵的评价</view>
+        <navigator url="../allassess/index?id={{goodsInfo.id}}" hover-class="none" wx:if="{{assess.length != 0}}"><button>查看全部评价</button></navigator>
+    </view>
+    <view class="detail-box">
+        <view class="title">上滑查看商品详情<view class="icon"></view></view>
+        <view class="detail-content"><template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}"/></view>
+    </view>
+</view>
+<view class="handle">
+    <button open-type="contact" class="zx"><view></view><text>咨询</text></button>
+    <navigator url="../cart/index" hover-class="none" open-type="switchTab"><view class="cart-icon"><view></view><text>购物车</text></view></navigator>
+    <view class="add-cart" bindtap="addCart">加入购物车</view>
+    <view class="buy" bindtap="buyNow">立即购买</view>
+</view>
+
+<view class="action-box" hidden="{{hidden}}" bindtap="cancel"></view> 
+<view animation="{{animationData}}" class="action" hidden="{{hidden}}">
+    <view class="act-top">
+        <view class="act-left">
+            <image src="{{base_url + goodsInfo.img}}" mode="aspectFill"></image>
+        </view>
+        <view class="act-right">
+            <view class="price">¥{{goodsInfo.price}}</view>
+            <view class="number">库存{{goodsInfo.nums}}件</view>
+            <!-- <view class="txt">请选择规格  数量</view> -->
+        </view>
+          <icon type="cancel" bindtap="cancel" size="24"/> 
+    </view>
+    <view class="act-middle">
+        <view class="title">商品规格</view>
+        <view class="list">
+            <block wx:for="{{goodsInfo.spec_arr}}" wx:key="index">
+                <view data-num="{{index}}" class="item {{sel==index ? 'active' : ''}}" bindtap="changeSpec" id="{{item}}">{{item}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="act-bottom">
+        <view class="title">购买数量</view>
+        <view class="handle-num">
+            <view class="btn" bindtap="delNum">-</view>
+            <view class="input">{{buy_nums}}</view>
+            <view class="btn" bindtap="addNum">+</view>
+        </view>
+    </view>
+</view> 

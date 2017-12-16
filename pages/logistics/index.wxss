@@ -1,0 +1,77 @@
+/* pages/logistics/index.wxss */
+.top{
+  padding: 0 30rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+}
+.top .title{
+  font-size: 14px;
+  color: #999;
+}
+.top text{
+  font-size: 14px;
+}
+.bottom{
+  margin-top: 20rpx;
+  padding-left: 22rpx;
+  padding-top: 35rpx;
+  background: #fff;
+}
+.item{
+  position: relative;
+  padding-top: 35rpx;
+}
+.item:first-of-type{
+  padding-top: 0;
+}
+.item:last-of-type:after{
+  height: 45%;
+}
+.item:after{
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  content: "";
+  background: #e3e5e9;
+  top: 0;
+  left: 10rpx;
+}
+.item:first-of-type .note{
+  color: #333;
+}
+.item:first-of-type .info:after{
+  width: 20rpx;
+  height: 20rpx;
+  background: #ff4444;
+  border:5rpx solid #fbc0c0;
+  top: 0;
+  left: -2rpx;
+}
+.info{
+  padding-left: 45rpx;
+  position: relative;
+}
+.info:after{
+   content: "";
+    position: absolute;
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 50%;
+    background: #e3e5e9;
+    left: 2px;
+    top: 30%;
+    z-index: 100;
+}
+.info .time{
+  padding-top: 20rpx;
+  padding-bottom: 25rpx;
+  border-bottom: 1px solid #eee;
+  color: #999;
+  font-size: 14px;
+}
+.info .note{
+  color: #999;
+  font-size: 14px;
+}

@@ -1,0 +1,16 @@
+<!--pages/allassess/index.wxml-->
+<view class="box">
+    <view class="title">商品评价（{{assessList.length}}）</view>
+    <view class="list">
+        <block wx:for="{{assessList}}" wx:key="index">
+            <view class="info item">
+                <view class="name"><image src="{{item.avatar}}" mode="aspectFill"></image> <text>{{item.nick_name}}</text></view>
+                <view class="text">{{item.content}}</view>
+                <view class="size">{{item.spec}}</view>
+                <!-- <block>
+                    <image src="/../common/img/img-1.png" class="img" bindtap="preview"></image>
+                </block> -->
+            </view>
+        </block>
+    </view>
+</view>

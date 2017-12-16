@@ -1,0 +1,49 @@
+<!--pages/order/index.wxml-->
+<view class="order box">
+    <view class="tab-nav">
+          <block wx:for="{{tabList}}" wx:key="index">
+              <view class="item {{index==tabIndex?'active':''}}" bindtap="tab" data-index="{{index}}">{{item}}</view>
+          </block>
+      </view>
+      <view class="weui-loadmore" wx:if="{{loadingFlag}}">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="tab-box">
+          <block wx:for="{{orderList}}" wx:key="index">
+          <view class="list yes">
+              <view class="title">
+                  <view class="order-num">订单编号：{{item.order_num}}</view>
+                  <view class="status">{{statusList[item.status]}}</view>
+              </view>
+              <block wx:for="{{item.goods_list}}" wx:for-item="val" wx:for-index="subindex" wx:key="subindex">
+                  <view class="item">
+                      <image src="{{base_url + val.img}}" mode="aspectFill"></image>
+                      <view class="info">
+                          <view class="top">
+                              <view class="name">{{val.goods_name}}</view>
+                              <view class="size">{{val.spec}}</view>
+                          </view>
+                          <view class="price">
+                              <view>¥ {{val.price}}</view>
+                              <text>X{{val.nums}}</text>
+                          </view>
+                          <button wx:if="{{item.status == 3}}" data-orderid="{{val.order_id}}" data-id="{{val.id}}" data-img="{{val.img}}" data-spec="{{val.spec}}" bindtap="goAssess">立即评价</button>
+                      </view>
+                  </view>
+              </block>
+              <view class="sum">共{{item.goods_list.length}}件 合计：￥{{item.sum}}</view>
+              <view class="btn-box" wx:if="{{item.status>=0 && item.status<6}}">
+                  <button wx:if="{{item.status == 0}}" data-id="{{item.id}}">立即支付</button>
+                  <button wx:if="{{item.status == 2}}" bindtap="goLogistics" data-id="{{item.id}}" data-number="{{item.order_num}}">查看物流</button>
+                  <button bindtap="handle" data-id="{{item.id}}" data-status="{{item.status}}" data-index="{{index}}">{{buttonList[item.status]}}</button>
+              </view>
+          </view>
+          </block>
+      </view>
+      <view class="list no" wx:if="{{orderList.length == 0 && !loadingFlag}}">
+        <view class="weui-loadmore weui-loadmore_line">
+              <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
+        </view>
+      </view>
+</view>

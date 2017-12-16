@@ -1,0 +1,112 @@
+/* pages/order/index.wxss */
+.tab-nav{
+  align-items: center;
+  justify-content:  space-around;
+  border-bottom: 1px solid #eee;
+}
+.tab-nav .item{
+  line-height: 90rpx;
+  font-size: 14px;
+  color: #666;
+  border-bottom: 2px solid transparent;
+}
+.tab-nav .item.active{
+  border-bottom: 2px solid #ff4444;
+  color: #ff4444;
+}
+.tab-box .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #999;
+  height: 80rpx;
+  padding: 0 22rpx;
+}
+.tab-box .list{
+  background: #fff;
+  margin-bottom: 22rpx;
+}
+.tab-box .item{
+  display: flex;
+  margin-bottom: 10rpx;
+  padding: 12rpx 22rpx;
+  background: #f9f9f9;
+  font-size: 14px;
+}
+.tab-box .item:last-child{
+  margin-bottom: 0;
+}
+.tab-box image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.tab-box .info{
+  margin-left: 20rpx;
+  padding-right: 40rpx;
+  flex: 1;
+}
+.tab-box .info button{
+  line-height: 40rpx;
+  background:#ff4444;
+  color:#fff;
+  border:1px solid #ff4444;
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 0;
+
+}
+.tab-box .name{
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tab-box .size{
+  font-size: 12px;
+  color: #999;
+}
+.tab-box .price{
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.tab-box .price view{
+  color: #ff4444;
+  font-size: 15px;
+}
+.tab-box .price text{
+  color: #999;
+  font-size: 12px;
+}
+.tab-box .sum{
+  text-align: right;
+  padding: 0 22rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+.tab-box .btn-box{
+  padding: 25rpx 22rpx;
+  text-align: right;
+  line-height: 0;
+}
+.btn-box button{
+  display: inline-block;
+  margin-left: 20rpx;
+  font-size: 13px;
+  line-height: 53rpx;
+  height:55rpx;
+}
+.btn-box button:last-of-type{
+  background: #ff4444;
+  color: #fff;
+  border: 1px solid #ff4444;
+}
+.btn-box button:first-of-type{
+  background: #fff;
+  color: #333;
+  border: 1px solid #333;
+}

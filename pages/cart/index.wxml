@@ -1,0 +1,83 @@
+<!--pages/cart/index.wxml-->
+<view class="cart box">
+     <view class="yes" wx:if="{{cartList.length !== 0}}">
+        <view class="title">
+            <view class="left">
+                <icon type="success_circle" wx:if="{{allCheck}}"/>
+                <icon type="circle"  wx:else="{{allCheck}}"/>
+                <view class="icon"></view>
+                <view class="name">良一科技</view>
+            </view>
+            <view class="edit" wx:if="{{editFlag}}" bindtap="edit">编辑</view>
+            <view class="edit" wx:else="{{editFlag}}" bindtap="edit">完成</view>
+        </view>
+        <view class="list">
+            <block wx:for="{{cartList}}" wx:key="index">
+                <view class="cart-shop-item" data-index="{{index}}"  bindtouchstart="touchStart" bindtouchmove="touchMove">
+                    <view class="slider-box {{editList[index]?'active':''}} {{sliderFlag == true?'slider':''}}" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove">
+                        <view class="select" data-index="{{index}}" bindtap="check">
+                            <icon type="success_circle" wx:if="{{item.select}}"/>
+                            <icon type="circle" wx:else="{{item.select}}"/>
+                        </view>
+                          <view class="right close-box" wx:if="{{editFlag}}">
+                              <image src="{{base_url + item.img}}" mode="aspectFill"></image>
+                              <view class="info">
+                                <view class="info-top info-item">
+                                    <text class="name">{{item.goods_name}}</text>
+                                </view>
+                                <view class="info-middle info-item">
+                                    <text class="size">{{item.spec}}</text>
+                                </view>
+                                <view class="info-bottom info-item">
+                                    <text class="price">¥ {{item.price}}</text>
+                                    <text class="number">X{{item.nums}}</text>
+                                </view>
+                            </view>
+                            <button data-index="{{index}}" id="{{item.cart_id}}" bindtap="delete">删除</button>
+                          </view> 
+                          <view class="right open-box" wx:else="{{editFlag}}">
+                            <image src="{{base_url + item.img}}" mode="aspectFill"></image>
+                            <view class="info">
+                                <view class="handle-num">
+                                    <view class="btn" data-index="{{index}}" data-id="{{item.cart_id}}" bindtap="delNum">-</view>
+                                    <view class="input">{{item.nums}}</view>
+                                    <view class="btn" data-index="{{index}}" data-id="{{item.cart_id}}" bindtap="addNum">+</view>
+                                </view>
+                                <view class="price">
+                                    <view>{{item.spec}}</view>
+                                    <text>¥ {{item.price}}</text>
+                                </view>
+                            </view>
+                            <button data-index="{{index}}" id="{{item.cart_id}}" bindtap="delete">删除</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view> 
+</view>
+<view class="handle" wx:if="{{cartList.length !== 0}}">
+    <view class="all-select" bindtap="allCheck">
+        <icon type="success_circle" wx:if="{{allCheck}}"/>
+        <icon type="circle"  wx:else="{{allCheck}}"/>
+        <text>全选</text>
+    </view>
+    <view class="right"wx:if="{{editFlag}}">
+        <view class="sum">
+            <view>合计：¥{{sum}}</view>
+            <text>不含运费</text>
+        </view>
+        <button disabled="{{!checkNumber}}" bindtap="submit">提交订单</button>
+    </view>
+    <view class="right" wx:else="{{editFlag}}">
+        <button bindtap="deleteMuch" disabled="{{!checkNumber}}">删除</button>
+    </view>
+</view> 
+
+<view class="no"  wx:if="{{cartList.length == 0 && loading}}">
+    <view class="icon"></view>
+    <view class="text">暂无宝贝</view>
+    <navigator url="../index/index" open-type="switchTab" hover-class="none">
+        <button>去逛逛</button>
+    </navigator>
+</view>

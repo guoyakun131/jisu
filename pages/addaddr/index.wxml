@@ -1,0 +1,36 @@
+<!--pages/addaddr/index.wxml-->
+<view class="box">
+    <form bindsubmit="formSubmit">
+        <view class="list">
+            <view class="link-item">
+                <view class="title">收货人</view>
+                <view class="right"><input type="text" placeholder="名字" placeholder-class="placehold" bindinput="Input" value="{{form.name}}" name="name" data-name="name"/></view>
+            </view>
+            <view class="link-item">
+                <view class="title">联系电话</view>
+                <view class="right"><input type="number" placeholder="手机或固定电话"  placeholder-class="placehold" bindinput="Input" value="{{form.mobile}}" name="mobile" data-name="mobile"/></view>
+            </view>
+            <view class="link-item city-picker">
+                <view class="title">收货地址</view>
+                <view class="right">
+                    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="全部">
+                        {{region[0]}}，{{region[1]}}，{{region[2]}}
+                    </picker>
+                </view>
+            </view> 
+            <view class="link-item">
+                <view class="title">详细地址</view>
+                <view class="right"><input type="text" placeholder="街道门牌信息" placeholder-class="placehold" bindinput="Input" value="{{form.detail}}" name="detail" data-name="detail"/></view>
+            </view>
+            <view class="link-item">
+                <view class="title">邮政编码</view>
+                <view class="right"><input type="number" placeholder="邮政编码（选填）" placeholder-class="placehold" bindinput="Input" value="{{form.code}}" name="code" data-name="code"/></view>
+            </view>
+        </view>
+        <view class="form-btn">
+            <button type="primary" formType="submit" disabled="{{disabled}}">保存</button>
+            <button class="cancel" wx:if="{{addr_id != null}}" bindtap="deleteAddr">删除收货地址</button>
+            <button class="cancel">取消</button>
+        </view>
+    </form>
+</view>

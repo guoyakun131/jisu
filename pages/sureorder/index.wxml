@@ -1,0 +1,65 @@
+<!--pages/sureorder/index.wxml-->
+<view class="box">
+    <view class="top"> 
+        <navigator url="../addr/index" hover-class="none" wx:if="{{addrSel != null}}">
+            <view class="addr link">
+                <view class="addr-icon"></view>
+                <view class="addr-info">
+                    <view class="name"><view><text class="icon"></text>收货人：{{addrSel.name}} </view><text>{{addrSel.mobile}}</text></view>
+                    <view class="addr-txt">收货地址：{{addrSel.province}}{{addrSel.city}}{{addrSel.dis}}{{addrSel.detail}}</view>
+                </view>
+            </view>
+        </navigator>
+        <navigator url="../addr/index" hover-class="none" wx:else="{{addrSel != null}}">
+          <view class="no-addr link">
+              <view class="addr-icon"></view>
+              <view class="text">请添加收货地址</view>
+          </view>
+        </navigator> 
+    </view>
+    <view class="middle">
+        <view class="shop-title"><view class="icon"></view>良一科技</view>
+        <view class="list">
+            <block wx:for="{{cartListSel}}" wx:key="index">
+                <view class="item">
+                    <image src="{{base_url + item.img}}" mode="aspectFill"></image>
+                    <view class="info">
+                        <view class="name">{{item.goods_name}}</view>
+                        <view class="size">{{item.spec}}</view>
+                        <view class="price">¥ {{item.price}}<text>X{{item.nums}}</text></view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="note">
+            <!-- <view class="link-item">
+                <view class="title">配送方式</view>
+                <view class="right">免运费</view>
+            </view> -->
+            <view class="link-item">
+                <view class="title">留言</view>
+                <view class="right"><input type="text" placeholder="点击给商家留言" bindinput="orderDes"/></view>
+            </view>
+            <view class="link-item s">
+                <view class="title">合计</view>
+                <view class="right">¥{{all_sum}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="note">
+            <view class="link-item">
+                <view class="title">商品金额</view>
+                <view class="right">¥{{goods_sum}}</view>
+            </view>
+            <view class="link-item">
+                <view class="title">运费</view>
+                <view class="right">+ ¥{{express_sum}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="handle">
+    <view class="sum">合计：<text>¥{{all_sum}}</text></view>
+    <button bindtap="subOrder" disabled="{{!addrSel.id}}">提交</button>
+</view>

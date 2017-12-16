@@ -1,0 +1,17 @@
+<!--pages/logistics/index.wxml-->
+<view class="box">
+    <view class="top">
+        <view class="title">订单编号：</view>
+        <text>{{orderNumber}}</text>
+    </view>
+    <view class="bottom">
+        <block wx:for="{{Logistics}}" wx:key="index">
+            <view class="item">
+                <view class="info">
+                    <view class="note">{{item.context}}</view>
+                    <view class="time">{{item.time}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

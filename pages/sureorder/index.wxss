@@ -1,0 +1,144 @@
+/* pages/sureorder/index.wxss */
+.box{
+  padding-bottom: 100rpx;
+  /*min-height: 100%;*/
+}
+.top{
+  padding: 25rpx 30rpx;
+  background: #fff;
+  font-size: 15px;
+  border-bottom: 2px dashed #8ab8fc;
+}
+.top .link:after{
+  right: 0;
+}
+.no-addr{
+  padding: 25rpx 0;
+}
+.no-addr{
+  display: flex;
+  align-items: center;
+}
+.addr {
+  display: flex;
+}
+.addr-info{
+  padding-right: 25rpx;
+  flex: 1;
+}
+.addr-info .name{
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 10rpx;
+}
+.addr-icon{
+  display: inline-block;
+  width: 25rpx;
+  height: 34rpx;
+  margin-right: 15rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAiCAMAAACdioI/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QzcxMDk1NkM3M0E0MTFFNzgzRDk5MDc0RDYxMzQ0N0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QzcxMDk1NkQ3M0E0MTFFNzgzRDk5MDc0RDYxMzQ0N0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpDNzEwOTU2QTczQTQxMUU3ODNEOTkwNzRENjEzNDQ3QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpDNzEwOTU2QjczQTQxMUU3ODNEOTkwNzRENjEzNDQ3QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvcFmjgAAAAzUExURf///zMzM0BAQMzMzICAgGZmZpmZmU1NTdnZ2bKysvLy8llZWeXl5b+/v42NjaWlpXNzcwAq03kAAAEVSURBVHjabFJJAoQgDJNK2Vzw/6+dtAVBnRxUSE3TZVlupBVYPlg9OcWVH/eJ3UA8BpHlfIpSqhu+/URQHbrxpg78kCbpAulTP8jR/rQDRZH29pqBYNan/9SQJRoPS5IuuNqaYwn3LnYfiqAnuWUTEx9hzdSSQmmJFlXtCgGXFgWGjPFuU5nTxIVhY1h8AsFRy4ogbjfFimT7dRNWrnY43peCsnUKUfpDrloU+ioVaW1aZC8o2OBKL0d1rG/lCNlauzdNboYHvBkU76/ZO1d7SCwzwy0zZMlm2IBG3TsS+iRaHM/jHXr8GH4amxTu9Pc5d6P8d13Sd5GQl5IQ7visPJp2Ut+D9ybNK/2m/hIYMc9SPwEGANd0Bmdv+wRjAAAAAElFTkSuQmCC);
+  background-size: cover;
+}
+.addr-txt{
+  /* padding-left: 35rpx; */
+  font-size: 12px;
+  color: #666;
+}
+.shop-title .icon{
+  width: 28rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAZCAMAAAAVHr4VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODcwNENBM0U3M0E2MTFFNzk0MEM4MjdCNDkzNkQ3Q0EiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODcwNENBM0Y3M0E2MTFFNzk0MEM4MjdCNDkzNkQ3Q0EiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzA0Q0EzQzczQTYxMUU3OTQwQzgyN0I0OTM2RDdDQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NzA0Q0EzRDczQTYxMUU3OTQwQzgyN0I0OTM2RDdDQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PreqwRgAAAEvUExURf///zMzM5KSkru7u8nJydvb2zQ0NI2Njaurq5GRkYWFhTU1NTY2NrW1tfz8/MHBwW9vb4qKim5ubnl5efn5+bq6uuvr64CAgM3Nzerq6vf39729ve7u7lVVVezs7Pr6+k1NTTk5Of7+/oKCgj09PUVFRVhYWHV1ddnZ2WxsbDg4OEFBQcPDw1JSUllZWaqqqvb29nNzc7e3t0ZGRnR0dPLy8nd3d3x8fNXV1dTU1Hh4eEBAQJeXl5aWls7OzpmZmZubm2dnZ/Dw8EdHR5+fn8/Pz4SEhGFhYejo6GVlZfv7+1RUVPHx8UhISENDQzc3N8bGxtPT056enjo6OtjY2MDAwLa2tn19fX9/f4aGhoODg2tra9bW1v39/VFRUVZWVvPz8+3t7e/v71NTU3Z2dprAHqQAAAEdSURBVHjalJLVcsMwEEXvpo0c20kMATvMDTRUZmZmZvj/b6hsPzl22ul52B3NkXauNAKArDFOAyzdJ2ET7cp1MeBmtlWcsWWCevBwQ5d236sVvBJjxRder2nFx6FH57wa4ZSffK9OA59XizyTOerCjAIVfmibdqxMAySAeVpHN8dnxJURF0rcivSGUgVDeCyhdjdMxqrYmCr4u8OTA0Ro2Vm0M07PtJ2+RrcoPzHxGNgUGEn8sZMSMSELfGhMLwN9g1pHuTDFdpnc6chMmiP565Wv0/YAU1ObwgXQEFVdbAALgt4Unq3bILW16pdHOdvnNUiTfjJEQVtGfpOhf8vI3zLPJD/5wPJW+2YTAQ8q1e09acHzbYlOtT7wI8AAVV4bFGKg+KAAAAAASUVORK5CYII=);
+  background-size: cover;
+}
+.middle,.bottom{
+  margin-top: 20rpx;
+  background: #fff;
+}
+.middle .shop-title{
+  display: flex;
+  align-items: center;
+  padding: 25rpx 30rpx;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+.middle .item{
+  display: flex;
+  padding: 10rpx 30rpx;
+}
+.middle .item image{
+  width: 245rpx;
+  height: 210rpx;
+}
+.middle .item .info{
+  margin-left: 20rpx;
+}
+.middle .link-item,.bottom .link-item{
+   padding: 0; 
+}
+.middle .note,.bottom .note{
+  padding-left: 30rpx;
+}
+.middle .size{
+  color: #999;
+}
+.middle .name{
+  font-size: 14px;
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.middle .price{
+  margin-top: 20rpx;
+  color: #ff4444;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.middle .price text{
+  color: #999999;
+  font-size: 12px;
+}
+.bottom .right{
+  color: #666;
+}
+.handle{
+  justify-content: space-between;
+  align-items: center;
+}
+.handle button{
+  width: 220rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 16px;
+  background: #ff4444;
+  margin: 0;
+  border-radius: 0;
+  color: #fff;
+}
+.handle .sum{
+  text-align: right;
+  font-size: 16px;
+  padding-right: 20rpx;
+  flex: 1;
+  color: #666666;
+}
+.handle .sum text{
+  color: #ff4444;
+}
+.link-item input[type="text"]{
+  text-align: left;
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Helvetica Neue', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+}
+.middle .right,.bottom .right{
+  color: #666;
+}
+.s .right{
+  color: #ff4343;
+}

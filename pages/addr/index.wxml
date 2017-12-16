@@ -1,0 +1,23 @@
+<!--pages/addr/index.wxml-->
+<view class="box">
+    <view class="list">
+        <block wx:for="{{addrList}}" wx:key="index">
+                <view class="item">
+                    <view class="select" data-index="{{index}}" bindtap="addrSel" data-id="{{item.id}}">
+                        <icon type="success_circle" wx:if="{{item.sel == 1}}"/>
+                        <icon type="circle" wx:else="{{item.sel == 1}}"/>
+                    </view>
+                    <view class="info" data-id="{{item.id}}" data-index="{{index}}" bindtap="addrSel">
+                        <view class="name">收货人：{{item.name}} <text>{{item.mobile}}</text></view>
+                        <view class="addr-txt">收货地址：{{item.province}}{{item.city}}{{item.dis}}{{item.detail}}</view>
+                    </view>
+                    <view class="edit" bindtap="addrUp" data-id="{{item.id}}"></view>   
+                </view>
+         </block>
+    </view>
+    <view class="list no" wx:if="{{addrList.length == 0}}">
+        <view class="icon"></view>
+        <view class="txt">您还没有添加地址</view>
+    </view>
+</view>
+ <navigator url="../addaddr/index"><view class="handle"><view class="icon"></view> 新增收货地址</view></navigator> 
