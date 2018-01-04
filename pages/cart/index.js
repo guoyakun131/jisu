@@ -86,9 +86,11 @@ function check2(that, carItem) {
  */
 function cart_list(that) {
   var _cartList;
+  var getOpenid = app.func.getOpenId
   var info = {
-    session_id: wx.getStorageSync('session_id'),
-    token: wx.getStorageSync('token'),
+   // session_id: wx.getStorageSync('session_id'),
+    //token: wx.getStorageSync('token'),
+    openid: getOpenid
   }
   that.setData({
     loading:false

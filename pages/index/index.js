@@ -32,16 +32,18 @@ var app = getApp();
  */
 // 引入SDK核心类
 
-function getData(that,index){
+function getData(that, index){
+  console.log(index)
   var shopList = that.data.shopList;
   var loadingFlag = that.data.loadingFlag;
   if (shopList[index].length == 0){
-    that.setData({
-      loadingFlag: true
-    })
     var data = {
       type: index
     }
+    that.setData({
+      loadingFlag: true
+    })
+   
     
     app.func.post('Shop/goods_list', data, function (res) {
       console.log(res.result);

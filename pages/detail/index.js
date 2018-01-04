@@ -49,10 +49,10 @@ function getGoodsDetail(that, goods_id) {
     id: goods_id
   }
   app.func.post('Shop/goods_info', data, function (res) {
-    console.log(res)
-    if (res.isError) {
+    console.log(res.result)
+    //if (res.isError) {
       goodsInfo = res.result;
-    }
+    //}
 
     WxParse.wxParse('goodsDetail', 'html', goodsInfo.content, that, 15);
 
@@ -67,17 +67,18 @@ function getGoodsDetail(that, goods_id) {
     })
   })
 }
+/**取得商品评论 */
 function getAssess(that, goods_id){
   var data = {
     id: goods_id
   }
   app.func.post('Shop/goods_comment',data,function(res){
-    console.log(res)
-    if (res.isError){
+    console.log("评价：" + res.result)
+    //if (res.isError){
       that.setData({
         assess: res.result
       })
-    }
+   // }
   })
 }
 Page({

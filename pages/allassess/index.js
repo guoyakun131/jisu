@@ -5,12 +5,12 @@ function init(that,id){
     id: id
   }
   app.func.post('Shop/goods_comment', data, function (res) {
-    if (res.isError) {
-      console.log(res)
+    //if (res.isError) {
+      console.log(res.result)
       that.setData({
         assessList: res.result
       })
-    }
+  //  }
   })
 }
 Page({
@@ -26,6 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
     init(this, options.id)
   },
   preview:function(event){

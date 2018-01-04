@@ -11,6 +11,7 @@ App({
     wx.setStorageSync('logs', logs)
   },
 
+
 /**获取用户信息 */
   getUserInfo:function(){
     var that = this
@@ -36,7 +37,7 @@ App({
               that.func.post('User/login', data, function (res) {
                 console.log(res)
                 if (res.isError) {
-                  //wx.setStorageSync("token", res.result.token);
+                 //wx.setStorageSync("token", res.token);
                   wx.setStorageSync("session_id", res.session_id);
                 }
               })
@@ -52,7 +53,7 @@ App({
     // appid: "wx4274f3ea5516d94c",
     // secret: "e573bfd063761434312f473def762ecd",
     //base_url: "https://liangyi120.xin/ds/"
-    base_url:"https://liangyi120.xin/"
+    base_url:"https://qubing.net.cn/"
   },
   func:{
     post:js.post,
