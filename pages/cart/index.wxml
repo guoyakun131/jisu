@@ -23,7 +23,7 @@
                               <image src="{{base_url + item.img}}" mode="aspectFill"></image>
                               <view class="info">
                                 <view class="info-top info-item">
-                                    <text class="name">{{item.goods_name}}</text>
+                                    <text class="name">{{item.goods_Name}}</text>
                                 </view>
                                 <view class="info-middle info-item">
                                     <text class="size">{{item.spec}}</text>

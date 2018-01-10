@@ -143,7 +143,7 @@ Page({
       } else { // 处于隐藏状态
           var info = {
             session_id: wx.getStorageSync('session_id'),
-            token: wx.getStorageSync('token'),
+            //token: wx.getStorageSync('token'),
             nums: this.data.buy_nums,
             goods_id: this.data.goodsInfo.id,
             spec: this.data.spec
@@ -156,6 +156,7 @@ Page({
                 icon: 'success',
                 duration: 2000
               })
+              that.cancel()
             }
           })
       }

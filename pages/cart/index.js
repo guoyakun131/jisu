@@ -42,7 +42,7 @@ function check1(that) {
     for (var i = 0; i < cartList.length; i++) {
       cartList[i].select = true;
       checkNumber = cartList.length;
-      console.log(checkNumber);
+      console.log("checkNumber"+checkNumber);
     }
   } else {
     for (var i = 0; i < cartList.length; i++) {
@@ -86,20 +86,18 @@ function check2(that, carItem) {
  */
 function cart_list(that) {
   var _cartList;
-  var getOpenid = app.func.getOpenId
   var info = {
-   // session_id: wx.getStorageSync('session_id'),
+   session_id: wx.getStorageSync('session_id'),
     //token: wx.getStorageSync('token'),
-    openid: getOpenid
   }
   that.setData({
     loading:false
   })
   app.func.post('Cart/cart_list', info, function (res) {
     console.log(res)
-    if (res.isError) {
+    //if (res.isError) {
       _cartList = res.result;
-    }
+    //}
 
     that.setData({
       cartList: _cartList,
@@ -114,10 +112,11 @@ function cart_list(that) {
  * 删除购物车商品
  */
 function delCart(that, _cart_id, index) {
+  console.log(_cart_id)
     var cartListOrg = that.data.cartList
     var info = {
-      session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
+      //session_id: wx.getStorageSync('session_id'),
+      //token: wx.getStorageSync('token'),
       cart_id: _cart_id
     }
 
@@ -195,14 +194,13 @@ Page({
     var cartList = this.data.cartList;
     cartList[index].nums ++;
     var data = {
-      session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
+      //session_id: wx.getStorageSync('session_id'),
+      //token: wx.getStorageSync('token'),
       cart_id: cart_id,
       nums: cartList[index].nums
     }
     console.log(data)
     app.func.post('Cart/edit_cart',data,function(res){
-      console.log(res)
       if (res.isError){
         that.setData({
           cartList
@@ -297,6 +295,7 @@ Page({
   check: function (event) {
     var that = this;
     var index = event.currentTarget.dataset.index;
+    console.log('cheke'+index)
     var cartList = this.data.cartList;
     cartList[index].select = !cartList[index].select;
     this.setData({
@@ -304,20 +303,24 @@ Page({
     })
     check2(that, cartList[index]);
   },
+  /**删除宝贝 */
   delete: function (event){
     var that = this
     var index = event.currentTarget.dataset.index;
     app.func.showModal("", "确认要删除该宝贝吗？", "再等等", "狠心抛弃", function(res){
+      console.log(res.confirm)
       if (res.confirm){
         delCart(that, event.currentTarget.id, index);
       }
     })
   },
-  deleteMuch:function(){
+   /**删除选中的宝贝 */
+  deleteMuch: function (event){
     var cartList = this.data.cartList;
+    console.log("cartList"+cartList)
     app.func.showModal("", "确认要删除选中的宝贝吗？", "再等等", "狠心抛弃", function (res) {
       if (res.confirm) {
-        
+     
       }
     })
   },

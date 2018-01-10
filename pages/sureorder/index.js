@@ -8,7 +8,7 @@ Page({
   data: {
     cart_sel: '',
     address_id: '',
-    base_url: app.globalData.base_url,
+    base_url: app.globalData.base_url
   },
 
   /**
@@ -21,7 +21,7 @@ Page({
     init(options.cart_sel, this);
   },
   onShow:function(){
-    init(this.data.cart_sel, this);
+    //init(this.data.cart_sel, this);
   },
   // 留言
   orderDes: function(e) {
@@ -33,14 +33,14 @@ Page({
   // 提交订单信息
   subOrder: function() {
     var info = {
-      session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
+      //session_id: wx.getStorageSync('session_id'),
+      //token: wx.getStorageSync('token'),
       cart_sel:this.data.cart_sel,
       address_id: this.data.addrSel.id,
       sum: this.data.all_sum,
       des: this.data.des
     }
-    console.log(info)
+    console.log("inro"+info)
     app.func.post('Shop/add_order', info, function (res) {
       console.log(res)
       if (res.isError) {
@@ -69,25 +69,29 @@ function init(_cart_sel, that) {
   var all_sum;
   var info = {
     session_id: wx.getStorageSync('session_id'),
-    token: wx.getStorageSync('token'),
+   // token: wx.getStorageSync('token'),
     cart_sel: _cart_sel
   }
+  console.log('nii'+info.cart_sel)
   app.func.post('Shop/conf_order', info, function (res) {
-    console.log(res)
+    
     if (res.isError) {
-      cartListSel = res.result.cart_list_sel,
-      addrSel = res.result.addr_sel,
-      goods_sum = res.result.goods_sum,
-      express_sum = res.result.express_sum,
-      all_sum = res.result.all_sum
+      console.log(res.cart_list_sel)
+      cartListSel = res.cart_list_sel,
+      addrSel = res.addr_sel   
+      // goods_sum = res.goods_sum,
+      // express_sum = res.express_sum,
+      // all_sum = res.all_sum
     }
 
     that.setData({
-      cartListSel,
-      addrSel,
-      goods_sum,
-      express_sum,
-      all_sum
+       cartListSel,
+       addrSel,
+      // goods_sum,
+      // express_sum,
+      // all_sum
     })
+
+    
   })
 }

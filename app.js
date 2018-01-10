@@ -53,7 +53,8 @@ App({
     // appid: "wx4274f3ea5516d94c",
     // secret: "e573bfd063761434312f473def762ecd",
     //base_url: "https://liangyi120.xin/ds/"
-    base_url:"https://qubing.net.cn/"
+    //base_url:"https://qubing.net.cn/"
+    base_url:"https://192.168.1.110/"
   },
   func:{
     post:js.post,
