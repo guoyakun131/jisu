@@ -5,8 +5,8 @@ function init(_addr_id, that) {
     var form = that.data.form;
     var region = that.data.region;
     var info = {
-      session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
+     // session_id: wx.getStorageSync('session_id'),
+      //token: wx.getStorageSync('token'),
       addr_id: _addr_id
     }
     app.func.post('Shop/get_addr_info', info, function (res) {
@@ -60,6 +60,7 @@ Page({
   onLoad:function(options){
     var that = this;
     if (options.addr_id){
+      console.log("addr_id"+options.addr_id)
       init(options.addr_id, this);
     }
   },
@@ -92,7 +93,7 @@ Page({
   deleteAddr:function(){
       var data = {
         session_id: wx.getStorageSync('session_id'),
-        token: wx.getStorageSync('token'),
+        //token: wx.getStorageSync('token'),
         address_id: this.data.addr_id
       }
       app.func.showModal("", "确定要删除该地址吗?", "取消", "确定", function(res){
@@ -106,13 +107,43 @@ Page({
           })
       })
   },
-  // 保存收货人信息
-  formSubmit: function(event) {
+
+  // 新增收货人信息
+  addrFormSubmit: function (event) {
     var form = this.data.form;
     var info = {
       session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
-      addr_id: this.data.addr_id,
+      //token: wx.getStorageSync('token'),
+      //id: this.data.addr_id,
+      name: form.name,
+      mobile: form.mobile,
+      detail: form.detail,
+      code: form.code,
+      province: this.data.region[0],
+      city: this.data.region[1],
+      dis: this.data.region[2],
+    }
+    app.func.post('Shop/add_addr', info, function (res) {
+      console.log(res)
+      if (res.isError) {
+        app.func.showToast("保存成功!")
+        wx.navigateBack({
+          url: '../addr/index'
+        })
+      }
+    })
+  },
+
+  // 保存收货人信息
+  formSubmit: function(event) {
+    if (this.data.addr_id == null){
+      this.addrFormSubmit(event);
+    }else{
+    var form = this.data.form;
+    var info = {
+      session_id: wx.getStorageSync('session_id'),
+     //token: wx.getStorageSync('token'),
+      id: this.data.addr_id,
       name: form.name,
       mobile: form.mobile,
       detail: form.detail,
@@ -130,5 +161,15 @@ Page({
         })
       }
     })
+    }
+  },
+  /**
+   * 取消
+   */
+  cancel: function(){
+    wx.navigateBack({
+      url: '../addr/index'
+    })
   }
+
 })

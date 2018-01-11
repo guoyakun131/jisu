@@ -21,7 +21,7 @@ Page({
     init(options.cart_sel, this);
   },
   onShow:function(){
-    //init(this.data.cart_sel, this);
+    init(this.data.cart_sel, this);
   },
   // 留言
   orderDes: function(e) {
@@ -79,17 +79,17 @@ function init(_cart_sel, that) {
       console.log(res.cart_list_sel)
       cartListSel = res.cart_list_sel,
       addrSel = res.addr_sel   
-      // goods_sum = res.goods_sum,
-      // express_sum = res.express_sum,
-      // all_sum = res.all_sum
+      goods_sum = res.goods_sum,
+      express_sum = res.express_sum,
+      all_sum = res.all_sum
     }
 
     that.setData({
-       cartListSel,
-       addrSel,
-      // goods_sum,
-      // express_sum,
-      // all_sum
+      cartListSel,
+      addrSel,
+      goods_sum,
+      express_sum,
+      all_sum
     })
 
     

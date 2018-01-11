@@ -33,7 +33,7 @@ Page({
       var index = e.currentTarget.dataset.index;
       var info = {
         session_id: wx.getStorageSync('session_id'),
-        token: wx.getStorageSync('token'),
+        //token: wx.getStorageSync('token'),
         addr_id: e.currentTarget.dataset.id
       }
 
@@ -61,7 +61,7 @@ function getAddrList(that) {
   var addrList;
   var info = {
     session_id: wx.getStorageSync('session_id'),
-    token: wx.getStorageSync('token')
+    //token: wx.getStorageSync('token')
   }
 
   app.func.post('Shop/addr_list', info, function (res) {

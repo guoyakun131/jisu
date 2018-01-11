@@ -1,6 +1,6 @@
 <!--pages/addaddr/index.wxml-->
 <view class="box">
-    <form bindsubmit="formSubmit">
+    <form bindsubmit="formSubmit" >
         <view class="list">
             <view class="link-item">
                 <view class="title">收货人</view>
@@ -30,7 +30,7 @@
         <view class="form-btn">
             <button type="primary" formType="submit" disabled="{{disabled}}">保存</button>
             <button class="cancel" wx:if="{{addr_id != null}}" bindtap="deleteAddr">删除收货地址</button>
-            <button class="cancel">取消</button>
+            <button class="cancel" bindtap='cancel'>取消</button>
         </view>
     </form>
 </view>

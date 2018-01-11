@@ -5,7 +5,7 @@
             <view class="addr link">
                 <view class="addr-icon"></view>
                 <view class="addr-info">
-                    <view class="name"><view><text class="icon"></text>收货人：{{addrSel.name}} </view><text>手机号：{{addrSel.mobile}}</text></view>
+                    <view class="name"><view><text class="icon"></text>收货人：{{addrSel.name}} </view><text>{{addrSel.mobile}}</text></view>
                     <view class="addr-txt">收货地址：{{addrSel.province}}{{addrSel.city}}{{addrSel.dis}}{{addrSel.detail}}</view>
                 </view>
             </view>
@@ -22,11 +22,11 @@
         <view class="list">
             <block wx:for="{{cartListSel}}" wx:key="index">
                 <view class="item">
-                    <image src="{{base_url + item.imgs}}" mode="aspectFill"></image>
+                    <image src="{{base_url + item.img}}" mode="aspectFill"></image>
                     <view class="info">
                         <view class="name">{{item.name}}</view>
                         <view class="size">{{item.spec}}</view>
-                        <view class="price">¥ {{item.price}}<text>{{item.nums}}</text></view>
+                        <view class="price">¥ {{item.price}}<text>X{{item.nums}}</text></view>
                     </view>
                 </view>
             </block>
@@ -54,7 +54,8 @@
             </view>
             <view class="link-item">
                 <view class="title">运费</view>
-                <view class="right">+ ¥{{express_sum}}</view>
+                <!-- <view class="right">+ ¥{{express_sum}}</view> -->
+                <view class="right">+ ¥0.00</view>
             </view>
         </view>
     </view>

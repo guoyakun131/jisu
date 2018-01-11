@@ -219,8 +219,8 @@ Page({
     if (cartList[index].nums>=2){
       cartList[index].nums--;
       var data = {
-        session_id: wx.getStorageSync('session_id'),
-        token: wx.getStorageSync('token'),
+        //session_id: wx.getStorageSync('session_id'),
+        //token: wx.getStorageSync('token'),
         cart_id: cart_id,
         nums: cartList[index].nums
       }
@@ -316,6 +316,7 @@ Page({
   },
    /**删除选中的宝贝 */
   deleteMuch: function (event){
+    var that = this
     var cartList = this.data.cartList;
     console.log("cartList"+cartList)
     app.func.showModal("", "确认要删除选中的宝贝吗？", "再等等", "狠心抛弃", function (res) {
