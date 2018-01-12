@@ -17,14 +17,14 @@ function init(that, index){
 function getOrder(that){
   var info = {
     session_id: wx.getStorageSync('session_id'),
-    token: wx.getStorageSync('token'),
-    status: that.data.tabIndex
+    //token: wx.getStorageSync('token'),
+    status: that.data.tabIndex - 1
   }
   that.setData({
     loadingFlag:true
   })
   app.func.post('User/order_list', info, function(res){
-    console.log(res)
+    console.log(res.result)
     if (res.isError) {
         that.setData({
           orderList: res.result,
@@ -35,7 +35,7 @@ function getOrder(that){
 }
 Page({
   data:{
-    tabList:["全部","待发货","待收货","待评价","已完成"],
+    tabList: ["全部", "待付款", "待发货", "待收货", "待评价", "已完成",'订单关闭'],
     statusList:['待付款','待发货','待收货','待评价','已完成','订单关闭'],
     buttonList: ['取消订单', '取消订单', '确认收货', '删除订单', '删除订单', '删除订单'],
     tabIndex:0,

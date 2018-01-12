@@ -33,17 +33,17 @@ Page({
   // 提交订单信息
   subOrder: function() {
     var info = {
-      //session_id: wx.getStorageSync('session_id'),
+      session_id: wx.getStorageSync('session_id'),
       //token: wx.getStorageSync('token'),
       cart_sel:this.data.cart_sel,
-      address_id: this.data.addrSel.id,
+      addressId: this.data.addrSel.id,
       sum: this.data.all_sum,
       des: this.data.des
     }
     console.log("inro"+info)
     app.func.post('Shop/add_order', info, function (res) {
       console.log(res)
-      if (res.isError) {
+      //if (res.isError) {
         wx.showToast({
           title: '订单提交成功！',
           icon: 'success',
@@ -53,7 +53,7 @@ Page({
         wx.redirectTo({
           url: '../order/index'
         })
-      }
+     // }
     })
   }
 })
@@ -83,7 +83,6 @@ function init(_cart_sel, that) {
       express_sum = res.express_sum,
       all_sum = res.all_sum
     }
-
     that.setData({
       cartListSel,
       addrSel,
@@ -91,7 +90,5 @@ function init(_cart_sel, that) {
       express_sum,
       all_sum
     })
-
-    
   })
 }
