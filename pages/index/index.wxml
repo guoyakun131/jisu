@@ -10,9 +10,23 @@
     <!--logo  -->
     <view class='logo'>
    
-        <view class='logo-image'>
-           
-           <text class='company_name'></text>
+         <view class='contont-box'>
+          <view class='laba-icon'>
+            <image src='../../common/img/notice.png'></image>
+          </view>
+
+          <view class='notice-text'>
+               <view class="marquee">
+                  <view class="marquee-contont">
+                      <text>{{text}}</text> <text style="display: inline-block; width:1em;"></text>
+                      <text>{{text}}</text> <text style="display: inline-block; width:1em;"></text>
+                      <text>{{text}}</text> <text style="display: inline-block; width:1em;"></text>
+                     
+                  </view>
+              </view>
+          </view>
+   
+        
         </view>
    
         

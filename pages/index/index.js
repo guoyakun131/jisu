@@ -82,6 +82,7 @@ function getNums(that) {
 Page({
  
   data: {
+    text:"近期多名国内外知名专家，入驻预约名医，掀起新潮流",
     imageUrl:'../../common/img/spa.jpg',
     //全部上新热销
     tabList: ['全部', '上新', '热销'],
