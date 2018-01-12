@@ -15,16 +15,27 @@ function init(that, index){
  * 取得订单列表
  */
 function getOrder(that){
+  //全部订单
+  if (that.data.tabIndex == 0 ){
+    var info = {
+      session_id: wx.getStorageSync('session_id'),
+      //token: wx.getStorageSync('token'),
+      status: 10
+    }
+  }else{
+    //按状态查询订单列表
   var info = {
     session_id: wx.getStorageSync('session_id'),
     //token: wx.getStorageSync('token'),
     status: that.data.tabIndex - 1
+  }
   }
   that.setData({
     loadingFlag:true
   })
   app.func.post('User/order_list', info, function(res){
     console.log(res.result)
+    console.log("1"+res.result.goodsList)
     if (res.isError) {
         that.setData({
           orderList: res.result,
@@ -35,7 +46,7 @@ function getOrder(that){
 }
 Page({
   data:{
-    tabList: ["全部", "待付款", "待发货", "待收货", "待评价", "已完成",'订单关闭'],
+    tabList: ["全部", "待付款", "待发货", "待收货", "待评价", "已完成"],
     statusList:['待付款','待发货','待收货','待评价','已完成','订单关闭'],
     buttonList: ['取消订单', '取消订单', '确认收货', '删除订单', '删除订单', '删除订单'],
     tabIndex:0,

@@ -145,7 +145,7 @@ Page({
             session_id: wx.getStorageSync('session_id'),
             //token: wx.getStorageSync('token'),
             nums: this.data.buy_nums,
-            goods_id: this.data.goodsInfo.id,
+            goodsId: this.data.goodsInfo.id,
             spec: this.data.spec
           }
 

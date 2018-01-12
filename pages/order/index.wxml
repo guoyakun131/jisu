@@ -16,7 +16,7 @@
                   <view class="order-num">订单编号：{{item.orderNum}}</view>
                   <view class="status">{{statusList[item.status]}}</view>
               </view>
-              <block wx:for="{{item.goods_list}}" wx:for-item="val" wx:for-index="subindex" wx:key="subindex">
+              <block wx:for="{{item.goodsList}}" wx:for-item="val" wx:for-index="subindex" wx:key="subindex">
                   <view class="item">
                       <image src="{{base_url + val.img}}" mode="aspectFill"></image>
                       <view class="info">
@@ -32,7 +32,7 @@
                       </view>
                   </view>
               </block>
-              <view class="sum">共{{item.goods_list.length}}件 合计：￥{{item.sum}}</view>
+              <view class="sum">共{{item.goodsList.length}}件 合计：￥{{item.sum}}</view>
               <view class="btn-box" wx:if="{{item.status>=0 && item.status<6}}">
                   <button wx:if="{{item.status == 0}}" data-id="{{item.id}}">立即支付</button>
                   <button wx:if="{{item.status == 2}}" bindtap="goLogistics" data-id="{{item.id}}" data-number="{{item.orderNum}}">查看物流</button>
