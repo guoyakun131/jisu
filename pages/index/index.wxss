@@ -10,17 +10,58 @@
 /*logo  */
 .logo{
   width: 100%;
-  height: 105rpx;
+  height: 80rpx;
   background: #fff; 
   position: relative;
 }
-.logo-image{
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 38%;
-  top:-65rpx;
+.contont-box{
+  width: 92%;
+  float: left;
+  height: 100%;
+  margin-left: 4%;
 }
+.laba-icon image{
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.laba-icon{
+  float: left;
+  width: 30rpx;
+  height: 26rpx;
+  margin-right: 15rpx;
+  margin-top: 25rpx;
+
+}
+.notice-text{
+  float: left;
+  width: 92%;
+  height: 50%;
+  margin-top: 18rpx;
+
+}
+@keyframes kf-marque-animation{ 0% { transform: translateX(0); } 100% { transform: translateX(-33.3%); } }
+.marquee{
+    width: 100%;
+    height: 44px;
+  
+   color: #333;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    position: relative;
+    font-size: 28rpx;
+}
+.marquee-contont{
+    display: inline-block;
+    position: relative;
+    padding-right: 0px;
+    animation: kf-marque-animation 5s linear infinite;
+    white-space: nowrap;
+}
+
 .apple-logo{
   width:180rpx;
   height: 180rpx;
