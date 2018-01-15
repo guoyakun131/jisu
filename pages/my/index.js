@@ -13,12 +13,12 @@ function get_sum(that) {
   var cartCount;
   var info = {
     session_id: wx.getStorageSync('session_id'),
-    token: wx.getStorageSync('token')
+    //token: wx.getStorageSync('token')
   }
 
   app.func.post('Cart/cart_count', info, function (res) {
     if (res.isError) {
-      cartCount = res.result.count
+      cartCount = res.count
     }
 
     that.setData({
@@ -43,7 +43,7 @@ Page({
         index: "3"
       },
       {
-        name: "已完成",
+        name: "待评价",
         index: "4"
       }
     ],

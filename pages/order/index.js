@@ -35,7 +35,6 @@ function getOrder(that){
   })
   app.func.post('User/order_list', info, function(res){
     console.log(res.result)
-    console.log("1"+res.result.goodsList)
     if (res.isError) {
         that.setData({
           orderList: res.result,
@@ -68,6 +67,7 @@ Page({
   // tab切换
   tab:function(event){
     var index = event.currentTarget.dataset.index;
+    console.log(index)
     this.setData({
       tabIndex: index
     })
@@ -82,7 +82,7 @@ Page({
     var id = event.currentTarget.dataset.id;
     var txt = '';
     var type;
-    if (status == 0 || status == 1){
+     if (status == 0 || status == 1){
       txt = '取消订单资金将原路返回';
       type = 1;
     } else if (status == 2){
@@ -94,7 +94,7 @@ Page({
     }
     var data = {
       session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
+      //token: wx.getStorageSync('token'),
       type: type ,
       order_id:id
     }
@@ -103,10 +103,10 @@ Page({
       app.func.post('User/change_order_status',data,function(res){
         console.log(res)
         if (res.isError){
-          if (res.result.status == 6){
+          if (res.status == 6){
             orderList.splice(index,1);
           }else{
-            orderList[index].status = res.result.status;
+            orderList[index].status = res.status;
           }
           that.setData({
             orderList
@@ -132,5 +132,59 @@ Page({
     wx.navigateTo({
       url: '../assess/index?orderId=' + orderid + '&id=' + id + '&img=' + img + '&spec=' + spec
     })
-  }
+  },
+  /**
+   * 支付
+   */
+  wxPay: function (event){
+    var that = this;
+    //订单id
+    var id = event.currentTarget.dataset.id;
+    console.log("订单Id"+id)
+    var data = {
+      session_id: wx.getStorageSync('session_id'),
+      order_id: id
+    }
+    app.func.post('wxPay/order', data, function (res) {
+    
+    if(res.isError){
+      that.doWxPay(res.result)
+    }
+
+    })
+  },
+  doWxPay(param) {
+    console.log(param.package)
+    //小程序发起微信支付
+    wx.requestPayment({
+      timeStamp: param.timeStamp,//记住，这边的timeStamp一定要是字符串类型的，不然会报错，我这边在java后端包装成了字符串类型了
+      nonceStr: param.nonceStr,
+      package: param.package,
+      signType: 'MD5',
+      paySign: param.paySign,
+      success: function (event) {
+        // success   
+        console.log(event);
+        wx.showToast({
+          title: '支付成功',
+          icon: 'success',
+          duration: 2000
+        });
+      },
+      fail: function (error) {
+        // fail   
+        console.log("支付失败")
+        wx.showToast({
+          title: '支付失败',
+          icon: 'success',
+          duration: 2000
+        });
+        console.log(error)
+      },
+      complete: function () {
+        // complete   
+        console.log("pay complete")
+      }
+    });
+  },
 })

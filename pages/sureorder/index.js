@@ -43,7 +43,7 @@ Page({
     console.log("inro"+info)
     app.func.post('Shop/add_order', info, function (res) {
       console.log(res)
-      //if (res.isError) {
+      if (res.isError) {
         wx.showToast({
           title: '订单提交成功！',
           icon: 'success',
@@ -53,7 +53,7 @@ Page({
         wx.redirectTo({
           url: '../order/index'
         })
-     // }
+     }
     })
   }
 })
