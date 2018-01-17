@@ -167,7 +167,7 @@ Page({
   },
   onLoad: function (){
     cart_list(this);
-    // init(this);
+    init(this);
   },
   onShow:function(){
     console.log(this.data.editFlag)

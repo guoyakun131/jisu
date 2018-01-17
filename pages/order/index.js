@@ -146,22 +146,21 @@ Page({
       order_id: id
     }
     app.func.post('wxPay/order', data, function (res) {
-    
-    if(res.isError){
-      that.doWxPay(res.result)
-    }
-
+      that.doWxPay(res)
     })
   },
-  doWxPay(param) {
-    console.log(param.package)
+  doWxPay(res) {
+    console.log(res.timeStamp)
+    console.log(res.nonceStr)
+    console.log(res.package)
+    console.log(res.paySign)
     //小程序发起微信支付
     wx.requestPayment({
-      timeStamp: param.timeStamp,//记住，这边的timeStamp一定要是字符串类型的，不然会报错，我这边在java后端包装成了字符串类型了
-      nonceStr: param.nonceStr,
-      package: param.package,
+      timeStamp: res.timeStamp,//记住，这边的timeStamp一定要是字符串类型的，不然会报错，我这边在java后端包装成了字符串类型了
+      nonceStr: res.nonceStr,
+      package: res.package,
       signType: 'MD5',
-      paySign: param.paySign,
+      paySign: res.paySign,
       success: function (event) {
         // success   
         console.log(event);
