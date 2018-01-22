@@ -15,21 +15,22 @@ function init(that, index){
  * 取得订单列表
  */
 function getOrder(that){
-  //全部订单
-  if (that.data.tabIndex == 0 ){
-    var info = {
-      session_id: wx.getStorageSync('session_id'),
-      //token: wx.getStorageSync('token'),
-      status: 10
-    }
-  }else{
+  // //全部订单
+  // if (that.data.tabIndex == 0 ){
+  //   var info = {
+  //     session_id: wx.getStorageSync('session_id'),
+  //     //token: wx.getStorageSync('token'),
+  //     status: 0
+  //   }
+  // }else{
     //按状态查询订单列表
   var info = {
     session_id: wx.getStorageSync('session_id'),
     //token: wx.getStorageSync('token'),
-    status: that.data.tabIndex - 1
+    status: that.data.tabIndex
   }
-  }
+  console.log(info)
+ // }
   that.setData({
     loadingFlag:true
   })
@@ -73,6 +74,15 @@ Page({
     })
     getOrder(this)
   },
+
+  tabs: function (index) {
+    //var index = event.currentTarget.dataset.index;
+    console.log(index)
+    this.setData({
+      tabIndex: index
+    })
+    getOrder(this)
+  },
   // 订单操作
   handle:function(event){
     var that = this;
@@ -82,7 +92,10 @@ Page({
     var id = event.currentTarget.dataset.id;
     var txt = '';
     var type;
-     if (status == 0 || status == 1){
+    if (status == 0){
+      txt = '确认取消吗？';
+      type = 0;
+}else if (status == 1){
       txt = '取消订单资金将原路返回';
       type = 1;
     } else if (status == 2){
@@ -107,6 +120,7 @@ Page({
             orderList.splice(index,1);
           }else{
             orderList[index].status = res.status;
+            that.tabs(4);
           }
           that.setData({
             orderList
@@ -125,6 +139,7 @@ Page({
   },
   // 去评价
   goAssess: function (event){
+    var that= this;
     var orderid = event.currentTarget.dataset.orderid;
     var id = event.currentTarget.dataset.id;
     var img = event.currentTarget.dataset.img;
@@ -132,6 +147,7 @@ Page({
     wx.navigateTo({
       url: '../assess/index?orderId=' + orderid + '&id=' + id + '&img=' + img + '&spec=' + spec
     })
+that.tabs(5);
   },
   /**
    * 支付
@@ -150,6 +166,7 @@ Page({
     })
   },
   doWxPay(res) {
+    var that =this;
     console.log(res.timeStamp)
     console.log(res.nonceStr)
     console.log(res.package)
@@ -169,6 +186,7 @@ Page({
           icon: 'success',
           duration: 2000
         });
+        that.tabs(2);
       },
       fail: function (error) {
         // fail   

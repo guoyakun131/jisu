@@ -15,8 +15,11 @@
             <block wx:for="{{orderList}}" wx:key="index">
                 <view class="order-item">
                     <navigator url="../order/index?index={{item.index}}">
-                        <view class="icon"></view>
+                        <view class="icon">
+                            <view class='tishi' wx:if='{{orderNums[index] != 0}}'>{{orderNums[index]}}</view>
+                        </view>
                         <text>{{item.name}}</text>
+                        
                     </navigator>
                 </view>
             </block>
@@ -32,4 +35,5 @@
         <view class="title">联系客服</view>
         <view class="right"></view>
     </view>
+
 </view>

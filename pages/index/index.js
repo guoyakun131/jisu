@@ -78,11 +78,23 @@ function getNums(that) {
     })
   })
 }
+/**通告 */
+function g(that) {
+ wx.request({
+   url: 'https://qubing.net.cn/ly/api/Shop/g',
+   method: "post",
+   success(res){
+     that.setData({
+      text:res.data
+     })
+   }
+ })
+}
 
 Page({
  
   data: {
-    text:"近期多名国内外知名专家，入驻预约名医，掀起新潮流",
+    text:[],
     imageUrl:'../../common/img/spa.jpg',
     //全部上新热销
     tabList: ['全部', '上新', '热销'],
@@ -110,7 +122,7 @@ Page({
       phoneNumber: '15081630312',
     })
   },
-  
+ 
   onLoad: function (options) {
     // 实例化API核心类
 
@@ -136,6 +148,9 @@ Page({
         app.getUserInfo();
       }
     })
+
+/**调用通告 */
+    g(this);
   
     // 取得各类型商品数量
     getNums(this);
