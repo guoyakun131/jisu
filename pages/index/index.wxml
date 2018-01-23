@@ -18,9 +18,9 @@
           <view class='notice-text'>
                <view class="marquee">
                   <view class="marquee-contont">
-                      <text>{{text}}</text> <text style="display: inline-block; width:1em;"></text>
-                      <text>{{text}}</text> <text style="display: inline-block; width:1em;"></text>
-                      <text>{{text}}</text> <text style="display: inline-block; width:1em;"></text>
+                      <text>{{text}}</text> <text style="display: inline-block; width:3em;"></text>
+                      <text>{{text}}</text> <text style="display: inline-block; width:3em;"></text>
+                      <text>{{text}}</text> <text style="display: inline-block; width:3em;"></text>
                      
                   </view>
               </view>

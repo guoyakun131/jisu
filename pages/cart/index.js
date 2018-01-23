@@ -317,11 +317,14 @@ Page({
    /**删除选中的宝贝 */
   deleteMuch: function (event){
     var that = this
+   console.log(event);
     var cartList = this.data.cartList;
-    console.log("cartList"+cartList)
+    var index = event.currentTarget.dataset.index;
+    var id = cartList[0].goods_id;
+   
     app.func.showModal("", "确认要删除选中的宝贝吗？", "再等等", "狠心抛弃", function (res) {
       if (res.confirm) {
-     
+        delCart(that,id, index);
       }
     })
   },

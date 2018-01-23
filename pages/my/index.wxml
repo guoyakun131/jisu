@@ -15,7 +15,9 @@
             <block wx:for="{{orderList}}" wx:key="index">
                 <view class="order-item">
                     <navigator url="../order/index?index={{item.index}}">
-                        <view class="icon"></view>
+                        <view class="icon">
+                          <view class='tishi'>1</view>
+                        </view>
                         <text>{{item.name}}</text>
                     </navigator>
                 </view>

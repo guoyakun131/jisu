@@ -13,6 +13,7 @@
         </view>
         <view class="list">
             <block wx:for="{{cartList}}" wx:key="index">
+            
                 <view class="cart-shop-item" data-index="{{index}}"  bindtouchstart="touchStart" bindtouchmove="touchMove">
                     <view class="slider-box {{editList[index]?'active':''}} {{sliderFlag == true?'slider':''}}" data-index="{{index}}" bindtouchstart="touchStart" bindtouchmove="touchMove">
                         <view class="select" data-index="{{index}}" bindtap="check">
