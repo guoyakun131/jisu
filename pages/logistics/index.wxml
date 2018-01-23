@@ -4,12 +4,15 @@
         <view class="title">订单编号：</view>
         <text>{{orderNumber}}</text>
     </view>
-    <view class="bottom">
-        <block wx:for="{{Logistics}}" wx:key="index">
+    <view class="bottom" wx:if="{{Success == false}}">暂无信息</view>
+    <view>快递单号{{LogisticCode}}</view>
+    <view class="bottom" wx:if="{{Success == true}}">
+        <block wx:for="{{Traces}}" wx:key="index">
             <view class="item">
                 <view class="info">
-                    <view class="note">{{item.context}}</view>
-                    <view class="time">{{item.time}}</view>
+                   <view class="time">{{item.AcceptTime}}</view>
+                    <view class="note">{{item.AcceptStation}}</view>
+                    
                 </view>
             </view>
         </block>

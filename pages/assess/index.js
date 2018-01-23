@@ -35,11 +35,12 @@ Page({
     var that = this;
     var data = {
       session_id: wx.getStorageSync('session_id'),
-      token: wx.getStorageSync('token'),
-      order_id: this.data.orderId,
-      goods_id: this.data.id,
+      //token: wx.getStorageSync('token'),
+      orderId: this.data.orderId,
+      goodsId: this.data.id,
       spec: this.data.spec,
-      content: this.data.content
+      content: this.data.content,
+      star: this.data.starIndex
     }
     console.log(data)
     app.func.post('User/goods_comment',data,function(res){

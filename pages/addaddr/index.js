@@ -111,6 +111,10 @@ Page({
   // 新增收货人信息
   addrFormSubmit: function (event) {
     var form = this.data.form;
+    if (form.mobile.length != 11){
+      app.func.showToast("手机号错误!")
+      return
+    }
     var info = {
       session_id: wx.getStorageSync('session_id'),
       //token: wx.getStorageSync('token'),
@@ -140,6 +144,10 @@ Page({
       this.addrFormSubmit(event);
     }else{
     var form = this.data.form;
+    if (form.mobile.length != 11) {
+      app.func.showToast("手机号错误！")
+      return
+    }
     var info = {
       session_id: wx.getStorageSync('session_id'),
      //token: wx.getStorageSync('token'),

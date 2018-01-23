@@ -145,7 +145,7 @@ Page({
             session_id: wx.getStorageSync('session_id'),
             //token: wx.getStorageSync('token'),
             nums: this.data.buy_nums,
-            goods_id: this.data.goodsInfo.id,
+            goodsId: this.data.goodsInfo.id,
             spec: this.data.spec
           }
 
@@ -170,16 +170,15 @@ Page({
     } else { // 处于隐藏状态
       var info = {
         session_id: wx.getStorageSync('session_id'),
-        token: wx.getStorageSync('token'),
+        //token: wx.getStorageSync('token'),
         nums: this.data.buy_nums,
-        goods_id: this.data.goodsInfo.id,
+        goodsId: this.data.goodsInfo.id,
         spec: this.data.spec
       }
-     
-
       app.func.post('Cart/add_cart', info, function (res) {
         if (res.isError) {
-          var cart_id = res.result.id
+          that.cancel();
+          var cart_id = res.id
           wx.setStorageSync("cart_sel", cart_id);
           wx.navigateTo({
             url: '../sureorder/index?cart_sel=' + cart_id

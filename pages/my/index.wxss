@@ -87,17 +87,17 @@
   background-size: cover;
   margin: 0 auto 10rpx auto;
 }
-.tishi{
-  position: relative;
-  border:3rpx solid #ff4444;
-  border-radius: 50%;
-  width: 25rpx;
-  height: 25rpx;
-  left: 37rpx;
-  top: -12rpx;
-  color: #ff4444;
-  font-size: 25rpx;
-  text-align: center;
-  line-height: 24rpx;
+ .tishi{
+position: relative;
+border-radius: 50%;
+width: 28rpx;
+height: 28rpx;
+left: 37rpx;
+top: -12rpx;
+font-size: 25rpx;
+text-align: center;
+line-height: 24rpx;
+background:#ff4444;
+color: #fff; 
 
-}
+} 
