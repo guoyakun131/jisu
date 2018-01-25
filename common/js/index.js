@@ -2,6 +2,7 @@
 var allurl = "https://qubing.net.cn/ly/api/";
 //var allurl = "https://liangyi120.xin/ds/api.php/";
  //var allurl = "https://192.168.1.108/api/";
+//var allurl = "https://192.168.1.108/ly/api/";
 /**发送POST网络请求：参数:url,data,cb */
 function postReq(url,data,cb){
   wx.request({
