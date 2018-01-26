@@ -1,0 +1,36 @@
+<view class="body">
+  <view class='box'>
+
+       <view class='title'>天一凉就加衣？宝宝这样穿，既舒适又暖和！</view>
+
+      <view class='author'>
+        <view class='name'>作者：九杀八</view>
+        <view class='time'>2017-11-11</view>
+      </view>
+      
+      <view class='picture'>
+        <image src='../images/baby.png'></image>
+      </view>
+
+      <view class='article' wx:for="{{[0,1,2]}}">你能，别人也能，所以，别说如今林云和人榜天骄相差两个小境界，就算是只相差一个小境界也很难战胜。   另外，林云虽然是十级满额天赋，不过天赋的意思是什</view>
+
+      <view class='bg'>
+        <image src='../images/bg.png'></image>
+
+        <view class='bg-box'>
+
+            <view class='bg-title'>有奖征文</view>
+
+            <view class='bg-texr1'>如果您有缘让我们给您调理健康方面和面子方面的问题，可以将您的调理过程和效果落笔成文投递给我们，文章请以word文档格式投递到我们的邮箱。</view>
+
+            <view class='bg-email blue'>jspy2008@163.com</view>
+
+            <view class='bg-text2 black'>投稿的文章请保证真实原创并附上您的微信号、姓名、电话、地址等联系方式。我们筛选后会刊登在患者说栏目中，一经刊载，将会为您送上一份<text class='red'>精美的礼物</text>哦！</view>
+
+            <view class='bg-text3 red'>感谢大家的积极反馈，我们期待您能够将您的调理过程和结果分享给您曾经备受煎熬的朋友们，让更多人早日康复</view>
+        
+        </view>
+      </view>
+
+  </view>
+</view>

@@ -1,0 +1,109 @@
+.body{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  font-family: "微软雅黑";
+  background: #fff;
+}
+image{
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+.contont{
+  float: left;
+  width: 100%;
+  height: auto;
+  
+}
+.tabs{
+  background: #ffffff;
+  width: 100%;
+  height: auto;
+  float: left;
+
+}
+.tabs-header{
+  width: 100%;
+  height: 80rpx;
+
+}
+.tabs-item{
+  width: 15%;
+  height: 100%;
+  display: inline-block;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 80rpx;
+}
+.tabs-item.active{
+  color: #fe4540;
+  position: relative;
+  }
+.tabs-item.active:after{ 
+  content: "";
+  display: block;
+  height: 5rpx;
+  width: 40rpx;
+  background: #fe4540;
+  position: absolute; 
+  top: 76rpx;
+  margin-left:42rpx;
+
+}
+.tabs-item_line{
+  display: inline-block;
+ width: 188rpx;
+  height: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #1bf718;
+ 
+  
+}
+.tabs-scroll-box{
+   width: 100%;
+  height: 100%;
+}
+.tabs-contont{
+  width: 100%;
+
+}
+.tab-swiper{
+  width: 100%;
+  height: 100%;
+}
+.section-block{
+  width: 100%;
+
+  height: 200rpx;
+  float: left;
+  border-top: 3rpx solid #eeeeee;
+}
+.section-image{
+  margin-left: 18rpx;
+  width: 210rpx;
+  height: 158rpx;
+  float: left;
+  margin-top: 20rpx;
+}
+.section-article{
+  float: left;
+  width: 67%;
+  height: 158rpx;
+  margin-left: 15rpx;
+
+  margin-top: 20rpx;
+}
+.section-articleName{
+  white-space:normal;
+  font-size: 31rpx;
+  color: #4e4e4e;
+ 
+}
+.section-articleAuthor{
+  font-size: 25rpx;
+   color: #c8c8c8;
+   margin-top: 40rpx;
+}

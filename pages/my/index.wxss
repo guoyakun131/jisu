@@ -90,13 +90,13 @@
  .tishi{
 position: relative;
 border-radius: 50%;
-width: 28rpx;
-height: 28rpx;
-left: 37rpx;
-top: -12rpx;
+width: 35rpx;
+height: 35rpx;
+left: 34rpx;
+top: -15rpx;
 font-size: 25rpx;
 text-align: center;
-line-height: 24rpx;
+line-height: 32rpx;
 background:#ff4444;
 color: #fff; 
 

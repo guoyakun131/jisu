@@ -1,0 +1,109 @@
+<view class="body">
+  <view class='box'>
+      <view class='title'>天一凉就加衣？宝宝这样穿，既舒适又暖和！</view>
+
+      <view class='author'>
+        <view class='name'>作者：九杀八</view>
+        <view class='time'>2017-11-11</view>
+      </view>
+      
+      <view class='picture'>
+        <image src='../images/baby.png'></image>
+      </view>
+
+      <view class='article' wx:for="{{[0,1,2,3]}}">你能，别人也能，所以，别说如今林云和人榜天骄相差两个小境界，就算是只相差一个小境界也很难战胜。   另外，林云虽然是十级满额天赋，不过天赋的意思是什</view>
+
+
+      <view class='shangpin'>
+        <image src='../images/baby.png'></image>
+        <view class='shangpin-details'>
+          <view class='shangpin-price'>￥498</view>
+          <view class='line'></view>
+          <view class='shangpin-text'>查看详情</view>
+        </view>
+      </view>
+
+      <view class='redenvelopes'>
+        <view class='redenvelopes-icon'>
+          <image src='../images/envelopes.png'></image>
+        </view>
+        <view class='redenvelopes-text'>已有99人打赏</view>
+      </view>
+
+
+  </view>
+
+  <view class='footer'>
+    <view class='footer-block'>
+       <view class='footer-headregion'>
+          <view class='head' wx:for="{{[0,1,2]}}">
+            <image src='../images/baby.png'></image>
+          </view>
+         
+      </view>
+
+      <view class='footer-text'>8888人了解真相</view>
+
+        <view class='btn' bindtap='dashang'>打赏</view>
+   
+    </view>
+
+  
+  </view>
+
+  
+</view>
+
+
+<view class='dashang {{dashang}}'>
+
+  <view class='shdow' bindtap='close'>
+     
+  </view>
+
+  <view class='redback {{redback}}'>
+
+    <view class='close' bindtap='close'>x</view>
+
+    <image src='../images/redback.png'>
+    </image>
+
+   
+     <view class='redback-block'>
+
+         <view class='redback-head'>
+          <image src='../images/baby.png'></image>
+      </view>
+
+      <view class='thanks'>谢谢您的鼓励！</view>
+
+      <view class='money'>
+
+        <view class='number-inputview {{input}}'>
+          <input focus='{{focus}}' type='digit' ></input>
+        </view>
+
+        <view class='number {{num}}'>{{money}}</view>
+
+        <view class='yuan'>元</view>
+
+      </view> 
+
+      <view class='{{ranmod}}'>
+
+          <view class='random' bindtap='random'>随机金额</view>
+
+          <view class='modify' bindtap='modify'>修改金额</view>
+
+      </view>
+
+      <view class='quxiao {{quxiao}}' bindtap='quxi'>取消</view>
+
+
+      <view class='redback-btn'>赏红包</view>
+
+     </view>
+
+  </view>
+
+</view>

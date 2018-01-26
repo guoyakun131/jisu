@@ -1,0 +1,47 @@
+<view class="body">
+  <view class='contont'>
+  
+  <view class='tabs'>
+    <view class='tabs-header'>
+      <view class='tabs-scroll-box'>
+      <scroll-view scroll-left="{{scrollLeft}}" scroll-x="true" class='scroll-view-x' style=' white-space: nowrap;  '>
+
+        <view wx:for="{{tabsheaderArray.length}}" 
+        wx:for-item="x" bindtap='swichNav'class="tabs-item {{currentTab==x?'active':''}}" data-current="{{tabsheaderArray[x].current}}" >
+        {{tabsheaderArray[x].name}}
+      </view>
+
+      
+      </scroll-view>
+
+      </view>
+
+    </view>
+
+    <view class='tabs-contont' style='height:{{contontHeight}}rpx' >
+      <swiper class='tab-swiper' current="{{currentTab}}" duration="500" bindchange="switchTab"  >
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]}}" wx:for-item='i'>
+          
+          <view  class='section-block' wx:for="{{array}}">
+             <navigator url='{{url}}'> 
+              <view class='section-image'>
+                <image src='/common/img/banner.jpg'></image>
+              </view> 
+              <view class='section-article'>
+                <view class='section-articleName'>新生儿一定得黄恒吗? 一篇文章说明白真正原因是什么。</view>
+                <view class='section-articleAuthor'>
+                作者：九杀八
+                </view>
+              </view>
+             </navigator>   
+          </view>
+
+          
+
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+  
+  </view>
+</view>

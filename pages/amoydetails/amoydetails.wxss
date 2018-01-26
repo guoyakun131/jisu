@@ -1,0 +1,321 @@
+.body{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  font-family: "微软雅黑";
+  background: #fff;
+
+}
+.box{
+  width: 92%;
+  height: auto;
+  float: left;
+  margin-left: 4%;
+  padding-bottom: 120rpx;
+  border-top: 3rpx solid #fff;
+}
+.title{
+  font-size: 38rpx;
+  color: #333333;
+  white-space: normal;
+  margin-top: 50rpx;
+  float: left;
+  font-weight: 600;
+}
+.author{
+  float: left;
+  width: 100%;
+  color: #999999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.name{
+  float: left;
+}
+.time{
+  float: left;
+  margin-left: 30rpx;
+}
+image{
+  float: left;
+  width: 100%;
+  height: 100%;
+
+}
+.picture{
+  width: 100%;
+  height: 320rpx;
+  float: left;
+  margin-top: 50rpx;
+
+}
+.article{
+  float: left;
+  width: auto;
+  height: auto;
+  font-size: 30rpx;
+  color: #333333;
+  white-space: normal;
+  margin-top: 30rpx;
+}
+.redenvelopes{
+  float: left;
+  width: 100%;
+  height: 85rpx;
+  margin-top: 30rpx;
+  
+  border-top: 3rpx solid #e5e5e5;
+}
+.redenvelopes-icon{
+  width: 31rpx;
+  height: 40rpx;
+  float: left;
+  margin-top: 24rpx;
+  margin-left: 10rpx;
+}
+.redenvelopes-text{
+  float: left;
+  margin-left: 25rpx;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 90rpx;
+}
+.footer{
+  width: 100%;
+  height: 100rpx;
+  float: left;
+  border-top: 20rpx solid #eeeeee;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  
+}
+.footer-block{
+  width: 92%;
+  height: 100%;
+  float: left;
+  margin-left: 4%;
+}
+.footer-headregion{
+  width: auto;
+  height: 100%;
+  float: left;
+  margin-top: 7rpx;
+  margin-left: 20rpx;
+}
+.head image{
+  border-radius: 50%;
+  
+}
+.head{
+  width: 70rpx;
+  height: 70rpx;
+  float: left;
+  margin-right: 18rpx;
+  
+}
+.footer-text{
+  float: left;
+  line-height: 90rpx;
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+
+
+}
+.btn{
+float: right;
+  border-radius: 10rpx;
+  width: 110rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  background: #fe4540;
+  color: #fff;
+  text-align: center;
+  margin-top: 12rpx;
+ margin-right: 25rpx;
+}
+
+
+.shdow{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+ opacity: 0.3;
+  background: #000;
+  left: 0;
+  top: 0;
+  z-index: 150;
+
+}
+.redback{
+  width: 470rpx;
+  height: 590rpx;
+  position: fixed;
+  z-index: 160;
+  left: 140rpx;
+  transition: 0.5s;
+  
+  
+}
+
+.redback-head{
+  width: 140rpx;
+  height: 140rpx;
+ margin-top: 45rpx;
+ margin-left: 165rpx;
+
+  
+}
+.redback-head image{
+  border-radius: 50%;
+}
+.thanks{
+  font-size: 32rpx;
+  color: #ffb245;
+  margin-left: 150rpx;
+  margin-top: 20rpx;
+}
+.money{
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.number{
+  color: #ffb245;
+  font-size: 66rpx;
+  margin-left: 150rpx;
+  margin-top: 40rpx;
+  float: left;
+
+
+}
+.number-inputview{
+
+  float: left;
+  margin-top: 60rpx;
+  width: 150rpx;
+  text-align: center;
+  height: 80rpx;
+  font-size: 66rpx;
+  color: #ffb245;
+   margin-left: 139rpx;
+}
+.yuan{
+   color: #ffb245;
+  font-size: 32rpx;
+  margin-left: 10rpx;
+  float: left;
+  margin-top: 75rpx;
+
+}
+.random{
+  font-size: 32rpx;
+  color: #db1818;
+  float: left;
+  margin-top: 25rpx;
+  margin-left: 50rpx;
+}
+.modify{
+  font-size: 32rpx;
+  color: #db1818;
+ margin-top: 25rpx;
+  margin-left: 110rpx;
+  float: left;
+  
+}
+.redback-btn{
+  width: 417rpx;
+  height: 70rpx;
+  background: #ffb245;
+  text-align: center;
+  line-height: 70rpx;
+  color: #db1819;
+ float: left;
+ margin-left: 28rpx;
+ margin-top: 30rpx;
+  border-radius: 20rpx;
+  font-size: 32rpx;
+
+}
+.redback-block{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+.quxiao{
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #db1818;
+ margin-top: 15rpx;
+}
+.shdow{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.close{
+  position: absolute;
+  font-size: 42rpx;
+  color: #f5f5f5;
+  left: 460rpx;
+  top: 0rpx;
+}
+.redshow{
+ top: 300rpx;
+}
+.redhide{
+  top: -270rpx;
+
+}
+.shangpin{
+  width: 100%;
+  height: 550rpx;
+  float: left;
+  margin-top: 20rpx;
+
+  position: relative;
+}
+
+.shangpin-details{
+  width: 220rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 451rpx;
+  top: 488rpx;
+  background: #fe4540;
+  color: #fff;
+
+  border-radius: 50rpx;
+}
+.shangpin-price{
+  width: 92rpx;
+  float: left;
+  font-size: 25rpx;
+  height: 100%;
+  text-align: center;
+  line-height: 50rpx;
+}
+.line{
+  width: 1rpx;
+  height: 25rpx;
+  background: #fff;
+  float: left;
+  margin-top: 14rpx;
+}
+.shangpin-text{
+  width: 125rpx;
+  float: left;
+  height: 100%;
+  font-size: 25rpx;
+   text-align: center;
+  line-height: 50rpx;
+  
+
+}

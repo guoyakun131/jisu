@@ -11,13 +11,16 @@
     "pages/addaddr/index",
     "pages/assess/index",
     "pages/logistics/index",
-    "pages/allassess/index"
+    "pages/allassess/index",
+    "pages/amoy/amoy",
+    "pages/amoydetails/amoydetails",
+    "pages/patientsay/patientsay"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  
+    
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "#ffffff"
   },
   "tabBar": {
     "color": "#999",
@@ -27,6 +30,12 @@
       "iconPath": "/common/img/icon-1.png",
       "selectedIconPath": "/common/img/icon-1-active.png",
       "text": "商城"
+    },
+    {
+      "pagePath": "pages/amoy/amoy",
+      "iconPath": "/common/img/meitao1.png",
+      "selectedIconPath": "/common/img/meitao.png",
+      "text": "美淘"
     },
     {
       "pagePath": "pages/cart/index",
