@@ -90,9 +90,9 @@ image{
 }
 .section-article{
   float: left;
-  width: 67%;
+  width: 65%;
   height: 158rpx;
-  margin-left: 15rpx;
+  margin-left: 25rpx;
 
   margin-top: 20rpx;
 }
@@ -105,5 +105,26 @@ image{
 .section-articleAuthor{
   font-size: 25rpx;
    color: #c8c8c8;
-   margin-top: 40rpx;
+   margin-top: 20rpx;
+   float: left;
+  
+}
+.liulan{
+  float: left;
+  margin-left: 40rpx;
+  margin-top: 20rpx;
+  
+}
+.liulan-icon{
+  width: 30rpx;
+  height: 21rpx;
+  float: left;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+
+}
+.liulan-text{
+  font-size: 25rpx;
+   color: #c8c8c8;
+   float: left;
 }

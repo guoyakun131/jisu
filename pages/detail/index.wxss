@@ -2,6 +2,7 @@
 
 .box{
   padding-bottom: 100rpx;
+  border:none;
 }
 swiper{
   height: 470rpx;

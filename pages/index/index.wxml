@@ -85,6 +85,8 @@
 <view class="info">
 <view class="name">{{subitem.name}}</view>
 <view class="price">￥{{subitem.price}}</view>
+<view class='people'>100人付款</view>
+
 </view>
 </navigator>
 </view>

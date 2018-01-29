@@ -32,6 +32,14 @@
                 <view class='section-articleAuthor'>
                 作者：九杀八
                 </view>
+
+                <view class='liulan'>
+                  <view class='liulan-icon'>
+                    <image src='../images/yan.png'></image>
+                  </view>
+
+                  <view class='liulan-text'>999</view>
+                </view>
               </view>
              </navigator>   
           </view>
