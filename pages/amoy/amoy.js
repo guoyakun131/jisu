@@ -67,25 +67,45 @@ var tabsheaderArray=
   },
 
 ]
+
+/**文章列表 */
+function articleList(that,currentTab){
+ 
+  var data = {
+    type: currentTab
+  }
+  app.func.post('article/articleList', data, function (res) {
+    console.log(res.articleList);
+    that.setData({
+      array: res.articleList
+    })
+
+  })
+}
 Page({
   data: {
-   
+    base_url: app.globalData.base_url,
     scrollLeft: 0, //tab标题的滚动条位置
     currentTab: 0, //预设当前项的值
     array: Array,
     tabsheaderArray: tabsheaderArray,
-    url:"../amoydetails/amoydetails"
+    url:"../amoydetails/amoydetails?id="
 
   },
   switchTab: function (e) {
     var currentTab=e.detail.current
+    console.log(currentTab)
+
+    articleList(this,currentTab);
+
     if(currentTab==1){
       this.setData({
-        url:"../patientsay/patientsay"
+        url:"../patientsay/patientsay?id="
       })
+     
     }else{
       this.setData({
-        url:"../amoydetails/amoydetails"
+        url:"../amoydetails/amoydetails?id="
       })
     }
     this.setData({
@@ -144,6 +164,9 @@ Page({
     this.setData({
       contontHeight: contontHeigth
     })
-  }
+
+    articleList(this,0);
+  },
+
 
 })

@@ -1,18 +1,21 @@
+<import src="../wxParse/wxParse.wxml"/>
 <view class="body">
   <view class='box'>
 
-       <view class='title'>天一凉就加衣？宝宝这样穿，既舒适又暖和！</view>
+       <view class='title'>{{article.title}}</view>
 
       <view class='author'>
-        <view class='name'>作者：九杀八</view>
-        <view class='time'>2017-11-11</view>
+        <view class='name'>作者：{{article.author}}</view>
+        <view class='time'>{{article.time}}</view>
       </view>
       
       <view class='picture'>
-        <image src='../images/baby.png'></image>
+        <image src='{{base_url+article.img}}'></image>
       </view>
 
-      <view class='article' wx:for="{{[0,1,2]}}">你能，别人也能，所以，别说如今林云和人榜天骄相差两个小境界，就算是只相差一个小境界也很难战胜。   另外，林云虽然是十级满额天赋，不过天赋的意思是什</view>
+      <view class='article' >
+      <template is="wxParse" data="{{wxParseData:articleDetail.nodes}}"/>
+      </view>
 
       <view class='bg'>
         <image src='../images/bg.png'></image>

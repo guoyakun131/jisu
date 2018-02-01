@@ -81,7 +81,7 @@ function getNums(that) {
 /**通告 */
 function g(that) {
  wx.request({
-   url: 'https://qubing.net.cn/ly/api/Shop/g',
+   url: 'https://aicha.net.cn/ly/api/Shop/g',
    method: "post",
    success(res){
      that.setData({

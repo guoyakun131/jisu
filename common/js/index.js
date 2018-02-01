@@ -1,5 +1,5 @@
 /**服务器地址 https://liangyi120.xin/ds/api.php/*/
-var allurl = "https://qubing.net.cn/ly/api/";
+var allurl = "https://aicha.net.cn/ly/api/";
 //var allurl = "https://liangyi120.xin/ds/api.php/";
  //var allurl = "https://192.168.1.108/api/";
 //var allurl = "https://192.168.1.108/ly/api/";
