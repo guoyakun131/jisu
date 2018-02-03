@@ -28,7 +28,9 @@
 
             <view class='bg-email blue'>jspy2008@163.com</view>
 
-            <view class='bg-text2 black'>投稿的文章请保证真实原创并附上您的微信号、姓名、电话、地址等联系方式。我们筛选后会刊登在患者说栏目中，一经刊载，将会为您送上一份<text class='red'>精美的礼物</text>哦！</view>
+              <view class='bg-text2 black'>投稿的文章请保证真实原创并附上您的微信号、姓名、电话、地址等联系方式。我们筛选后会刊登在患者说栏目中，一经刊载，将会为您送上一份<text class='red'>精美的礼物</text>哦！</view>  
+
+             <!-- <view class='bg-text2 black'>{{article.zw}}</view>  -->
 
             <view class='bg-text3 red'>感谢大家的积极反馈，我们期待您能够将您的调理过程和结果分享给您曾经备受煎熬的朋友们，让更多人早日康复</view>
         

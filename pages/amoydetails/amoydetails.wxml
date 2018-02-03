@@ -12,7 +12,7 @@
         <image src='{{base_url+article.img}}'></image>
       </view>
 
-      <view class='article' >
+      <view class='article'>
       <template is="wxParse" data="{{wxParseData:articleDetail.nodes}}"/>
       </view>
 
